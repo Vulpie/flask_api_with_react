@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
+import Form from './Form'
 
 const Page = () => {
-	const [todo, setTodo] = useState([])
+	const [store, setStore] = useState([])
+	const [addItem, setAddItem] = useState('')
 
 	useEffect(() => {
 		fetch('/api')
@@ -11,11 +13,34 @@ const Page = () => {
 					return res.json()
 				}
 			})
-			.then((data) => console.log(data))
+			.then((data) => setStore(data))
 	}, [])
+
+	const handleFormChange = (inputValue) => {
+		setAddItem(inputValue)
+		console.log(addItem)
+	}
+
+	const handleFormSubmit = () => {
+		fetch('/api/create', {
+			method: 'POST',
+			body: JSON.stringify({ content: addItem }),
+			headers: {
+				'Content-type': 'application/json; charset=UTF-8',
+			},
+		})
+			.then((res) => res.json())
+			.then((msg) => console.log(msg))
+	}
+
 	return (
 		<>
-			<Card />
+			<Form
+				userInput={addItem}
+				onFormChange={handleFormChange}
+				handleFormSubmit={handleFormSubmit}
+			/>
+			<Card storeItems={store} />
 		</>
 	)
 }
