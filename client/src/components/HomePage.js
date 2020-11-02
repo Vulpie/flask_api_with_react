@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Card from './Card'
+import ItemList from './ItemList'
 import Form from './Form'
 
-const Page = () => {
+const HomePage = () => {
 	const [store, setStore] = useState([])
 	const [addItem, setAddItem] = useState('')
 
@@ -40,9 +40,9 @@ const Page = () => {
 				onFormChange={handleFormChange}
 				handleFormSubmit={handleFormSubmit}
 			/>
-			<Card storeItems={store} />
+			<ItemList storeItems={store} />
 		</>
 	)
 }
 
-export default Page
+export default HomePage

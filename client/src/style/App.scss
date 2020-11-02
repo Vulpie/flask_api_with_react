@@ -34,3 +34,22 @@
 		border-radius: variables.$border-rad;
 	}
 }
+
+.item-list {
+	&__header {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: variables.$main;
+	}
+	&__list {
+		list-style: none;
+		&_item {
+			margin: 5px 0;
+			border: 1px solid variables.$main;
+			&_link {
+				text-decoration: none;
+				color: variables.$main;
+			}
+		}
+	}
+}

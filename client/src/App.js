@@ -1,5 +1,5 @@
 import './style/App.scss'
-import Page from './components/HomePage'
+import HomePage from './components/HomePage'
 import Details from './components/Details'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/" exact>
-						<Page />
+						<HomePage />
 					</Route>
 					<Route path="/:id">
 						<Details />
