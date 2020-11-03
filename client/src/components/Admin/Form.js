@@ -10,16 +10,25 @@ const Form = ({ userInput, onFormChange, handleFormSubmit }) => {
 		handleFormSubmit()
 	}
 	return (
-		<form onSubmit={(e) => handleSubmit(e)} className="item-form">
-			<label className="item-form__label">Item description</label>
+		<form
+			onSubmit={(e) => handleSubmit(e)}
+			className="admin__area_item-form"
+		>
+			<label className="admin__area_item-form_label">
+				Item description
+			</label>
 			<input
-				className="item-form__input"
+				className="admin__area_item-form_input"
 				type="text"
 				value={userInput}
 				onChange={(e) => handleChange(e)}
 				required
 			/>
-			<input type="submit" value="Submit" className="item-form__button" />
+			<input
+				type="submit"
+				value="Submit"
+				className="admin__area_item-form_button"
+			/>
 		</form>
 	)
 }

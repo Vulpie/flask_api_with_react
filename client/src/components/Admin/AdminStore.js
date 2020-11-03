@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import ItemList from './ItemList'
+import ItemList from '../ItemList'
+import AdminNavBar from './AdminNavBar'
 import Form from './Form'
-import NavBar from './NavBar'
 
-const HomePage = () => {
+const AdminStore = () => {
 	const [store, setStore] = useState([])
 	const [addItem, setAddItem] = useState('')
 
@@ -36,15 +36,17 @@ const HomePage = () => {
 
 	return (
 		<>
-			<NavBar />
-			<Form
-				userInput={addItem}
-				onFormChange={handleFormChange}
-				handleFormSubmit={handleFormSubmit}
-			/>
-			<ItemList storeItems={store} />
+			<AdminNavBar />
+			<div className="admin__area">
+				<Form
+					userInput={addItem}
+					onFormChange={handleFormChange}
+					handleFormSubmit={handleFormSubmit}
+				/>
+				<ItemList storeItems={store} />
+			</div>
 		</>
 	)
 }
 
-export default HomePage
+export default AdminStore
