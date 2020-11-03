@@ -1,6 +1,11 @@
 # E-commerce app
 
-This is a small e-commerce app with Flask api and React.js frontend.
+Small CMS system created with Flask and React.js.
+
+## Features
+
+-   Admin panel
+-   E-commerce. on-line shop
 
 ## Technology
 
