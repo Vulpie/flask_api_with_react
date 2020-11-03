@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import ItemList from '../ItemList'
 import AdminNavBar from './AdminNavBar'
 import Form from './Form'
+import StoreItem from './StoreItem'
 
 const AdminStore = () => {
 	const [store, setStore] = useState([])
 	const [addItem, setAddItem] = useState('')
+	const [itemCount, setItemCount] = useState(0)
 
 	useEffect(() => {
 		fetch('/api')
@@ -14,12 +15,14 @@ const AdminStore = () => {
 					return res.json()
 				}
 			})
-			.then((data) => setStore(data))
-	}, [])
+			.then((data) => {
+				setStore(data)
+				setItemCount(data.length)
+			})
+	}, [itemCount])
 
 	const handleFormChange = (inputValue) => {
 		setAddItem(inputValue)
-		console.log(addItem)
 	}
 
 	const handleFormSubmit = () => {
@@ -31,11 +34,14 @@ const AdminStore = () => {
 			},
 		})
 			.then((res) => res.json())
-			.then((msg) => console.log(msg))
+			.then((msg) => {
+				console.log(msg)
+				setItemCount(itemCount + 1)
+			})
 	}
 
 	return (
-		<>
+		<div className="admin">
 			<AdminNavBar />
 			<div className="admin__area">
 				<Form
@@ -43,9 +49,13 @@ const AdminStore = () => {
 					onFormChange={handleFormChange}
 					handleFormSubmit={handleFormSubmit}
 				/>
-				<ItemList storeItems={store} />
+				<div className="admin__area_list">
+					{store.map((item) => (
+						<StoreItem content={item.content} id={item.id} />
+					))}
+				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

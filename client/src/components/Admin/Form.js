@@ -10,15 +10,10 @@ const Form = ({ userInput, onFormChange, handleFormSubmit }) => {
 		handleFormSubmit()
 	}
 	return (
-		<form
-			onSubmit={(e) => handleSubmit(e)}
-			className="admin__area_item-form"
-		>
-			<label className="admin__area_item-form_label">
-				Item description
-			</label>
+		<form onSubmit={(e) => handleSubmit(e)} className="admin__area_form">
+			<label className="admin__area_form_label">Item description</label>
 			<input
-				className="admin__area_item-form_input"
+				className="admin__area_form_input"
 				type="text"
 				value={userInput}
 				onChange={(e) => handleChange(e)}
@@ -27,7 +22,7 @@ const Form = ({ userInput, onFormChange, handleFormSubmit }) => {
 			<input
 				type="submit"
 				value="Submit"
-				className="admin__area_item-form_button"
+				className="admin__area_form_button"
 			/>
 		</form>
 	)

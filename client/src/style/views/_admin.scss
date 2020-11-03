@@ -8,6 +8,7 @@
 		&__navbar {
 			background-color: variables.$main;
 			width: 25%;
+			height: 100vh;
 			display: flex;
 			flex-direction: column;
 			&_header {
@@ -30,7 +31,12 @@
 		}
 		&__area {
 			width: 75%;
-			&__item-form {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			&_form {
 				width: 30%;
 				display: flex;
 				flex-direction: column;
@@ -55,6 +61,23 @@
 					margin: 5px 0;
 					padding: 5px;
 					border-radius: variables.$border-rad;
+				}
+			}
+			&_list {
+				width: 80%;
+				&_item {
+					border: 1px solid variables.$main;
+					display: flex;
+					align-items: center;
+					&_property {
+						font-weight: 500;
+						padding: 0 5px;
+					}
+					&_link {
+						color: variables.$main;
+						font-style: italic;
+						padding: 0 5px;
+					}
 				}
 			}
 		}
