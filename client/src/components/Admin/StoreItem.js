@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const StoreItem = ({ content, id }) => {
+const StoreItem = ({ content, id, updateCount }) => {
 	const deleteItem = () => {
 		fetch(`/api/${id}`, {
 			method: 'POST',
@@ -10,6 +10,7 @@ const StoreItem = ({ content, id }) => {
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data)
+				updateCount()
 			})
 	}
 

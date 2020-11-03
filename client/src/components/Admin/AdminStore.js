@@ -40,6 +40,10 @@ const AdminStore = () => {
 			})
 	}
 
+	const updateCount = () => {
+		setItemCount(itemCount - 1)
+	}
+
 	return (
 		<div className="admin">
 			<AdminNavBar />
@@ -51,7 +55,11 @@ const AdminStore = () => {
 				/>
 				<div className="admin__area_list">
 					{store.map((item) => (
-						<StoreItem content={item.content} id={item.id} />
+						<StoreItem
+							content={item.content}
+							id={item.id}
+							updateCount={updateCount}
+						/>
 					))}
 				</div>
 			</div>
