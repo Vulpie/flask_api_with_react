@@ -1,11 +1,13 @@
 import React from 'react'
 import AdminNavBar from './AdminNavBar'
-
+import PostForm from './PostForm'
 const AdminHome = () => {
 	return (
 		<div className="admin">
 			<AdminNavBar />
-			<h3>Admin Home Page Manager</h3>
+			<div className="admin__area">
+				<PostForm />
+			</div>
 		</div>
 	)
 }

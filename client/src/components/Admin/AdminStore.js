@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import AdminNavBar from './AdminNavBar'
-import Form from './Form'
+import ItemForm from './ItemForm'
 import StoreItem from './StoreItem'
 
 const AdminStore = () => {
@@ -9,7 +9,7 @@ const AdminStore = () => {
 	const [itemCount, setItemCount] = useState(0)
 
 	useEffect(() => {
-		fetch('/api')
+		fetch('/api/item/all')
 			.then((res) => {
 				if (res.ok) {
 					return res.json()
@@ -26,7 +26,7 @@ const AdminStore = () => {
 	}
 
 	const handleFormSubmit = () => {
-		fetch('/api/create', {
+		fetch('/api/item/add', {
 			method: 'POST',
 			body: JSON.stringify({ content: addItem }),
 			headers: {
@@ -48,7 +48,7 @@ const AdminStore = () => {
 		<div className="admin">
 			<AdminNavBar />
 			<div className="admin__area">
-				<Form
+				<ItemForm
 					userInput={addItem}
 					onFormChange={handleFormChange}
 					handleFormSubmit={handleFormSubmit}
@@ -56,6 +56,7 @@ const AdminStore = () => {
 				<div className="admin__area_list">
 					{store.map((item) => (
 						<StoreItem
+							key={'store_item' + item.id}
 							content={item.content}
 							id={item.id}
 							updateCount={updateCount}

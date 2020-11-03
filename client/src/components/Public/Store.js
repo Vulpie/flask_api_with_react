@@ -6,7 +6,7 @@ const Store = () => {
 	const [store, setStore] = useState([])
 
 	useEffect(() => {
-		fetch('/api')
+		fetch('/api/item/all')
 			.then((res) => {
 				if (res.ok) {
 					return res.json()

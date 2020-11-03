@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const StoreItem = ({ content, id, updateCount }) => {
 	const deleteItem = () => {
-		fetch(`/api/${id}`, {
+		fetch(`/api/item/delete/${id}`, {
 			method: 'POST',
 			body: JSON.stringify({ id: id }),
 		})
@@ -15,7 +15,7 @@ const StoreItem = ({ content, id, updateCount }) => {
 	}
 
 	return (
-		<div className="admin__area_list_item" key={'store_item' + id}>
+		<div className="admin__area_list_item">
 			<p className="admin__area_list_item_property">{content}</p>
 			<Link to={`${id}`} className="admin__area_list_item_link">
 				Details
