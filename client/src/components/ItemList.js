@@ -12,11 +12,14 @@ const ItemList = ({ storeItems }) => {
 							className="item-list__list_item"
 							key={'store_item' + item.id}
 						>
+							<div className="item-list__list_item_property">
+								{item.content}
+							</div>
 							<Link
 								to={`${item.id}`}
 								className="item-list__list_item_link"
 							>
-								{item.content}
+								Details
 							</Link>
 						</li>
 					)
