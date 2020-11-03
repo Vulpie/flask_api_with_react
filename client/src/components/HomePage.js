@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ItemList from './ItemList'
 import Form from './Form'
+import NavBar from './NavBar'
 
 const HomePage = () => {
 	const [store, setStore] = useState([])
@@ -35,6 +36,7 @@ const HomePage = () => {
 
 	return (
 		<>
+			<NavBar />
 			<Form
 				userInput={addItem}
 				onFormChange={handleFormChange}

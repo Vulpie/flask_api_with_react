@@ -10,7 +10,7 @@ const Form = ({ userInput, onFormChange, handleFormSubmit }) => {
 		handleFormSubmit()
 	}
 	return (
-		<form onSubmit={(e) => handleSubmit(e)} class="item-form">
+		<form onSubmit={(e) => handleSubmit(e)} className="item-form">
 			<label className="item-form__label">Item description</label>
 			<input
 				className="item-form__input"
