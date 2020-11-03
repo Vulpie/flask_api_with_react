@@ -8,7 +8,7 @@ const AdminNavBar = () => {
 			<Link to="/" className="admin__navbar_item">
 				Website
 			</Link>
-			<Link to="/admin/home" className="admin__navbar_item">
+			<Link to="/admin/index" className="admin__navbar_item">
 				Admin Home
 			</Link>
 			<Link to="/admin/manage/store" className="admin__navbar_item">

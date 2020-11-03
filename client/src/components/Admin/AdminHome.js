@@ -3,10 +3,10 @@ import AdminNavBar from './AdminNavBar'
 
 const AdminHome = () => {
 	return (
-		<div className="admin">
+		<>
 			<AdminNavBar />
-			<h2>Admin Panel</h2>
-		</div>
+			<h3>Admin Home Page Manager</h3>
+		</>
 	)
 }
 
