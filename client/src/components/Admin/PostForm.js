@@ -28,8 +28,8 @@ const PostForm = () => {
 				required
 			/>
 			<label className="admin__area_form_label">Post content</label>
-			<input
-				className="admin__area_form_input"
+			<textarea
+				className="admin__area_form_textarea"
 				type="text"
 				name="content"
 				required

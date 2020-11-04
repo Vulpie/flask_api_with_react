@@ -1,0 +1,22 @@
+@use '../variables';
+
+@mixin home-main {
+	.home {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&__blog {
+			width: 60%;
+			&_post {
+				border: 1px solid black;
+				margin: 20px 0;
+				padding: 5px;
+				&_title {
+					font-size: 1.2rem;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}

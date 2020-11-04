@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
+import Post from './Post'
 
 const Home = () => {
 	const [blog, setBlog] = useState([])
@@ -15,12 +16,16 @@ const Home = () => {
 			<div className="home">
 				<h2>Home Page</h2>
 				<div className="home__blog">
-					{blog.map((post) => (
-						<div key={'post' + post.id}>
-							{post.title} : {post.content} : {post.createdAt} :{' '}
-							{post.modifiedAt}
-						</div>
-					))}
+					{blog.length !== 0 &&
+						blog.map((post) => (
+							<Post
+								key={'post' + post.id}
+								title={post.title}
+								content={post.content}
+								createdAt={post.createdAt}
+								modifiedAt={post.modifiedAt}
+							/>
+						))}
 				</div>
 			</div>
 		</>
